@@ -1,6 +1,7 @@
 package datastructures;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 import interfaces.Callable;
 
@@ -247,7 +248,34 @@ public class ExtendedLinkedList implements Iterable {
 	 * addI(Integer data, int i): adds data into list at position i
 	 */
 	public void addI(Integer data, int i) {
-        // TODO: implement this method
+		// error handling
+		// throw if index is out of bounds
+		if (i > this.getSize()) {
+			throw new IndexOutOfBoundsException("List index" +  i +" is out of bounds.");
+		}
+
+		// set first element when index = 0
+		if (i == 0) {
+			addFirst(data);
+			return;
+		}
+
+		// make new list element
+		ListElement e = new ListElement(data);
+
+		// find element for position i-1
+		// (because we can only do setNext())
+		ListElement curr = this.head;
+		for (int j = 0; j < i-1; j++) {
+			curr = curr.getNext();
+		}
+
+		// set element
+		e.setNext(curr.getNext());
+		curr.setNext(e);
+
+		// increase size of list
+		this.size++;
 	}
 
     /**
