@@ -282,7 +282,21 @@ public class ExtendedLinkedList implements Iterable {
 	 * removeI(int i): removes element from position i
 	 */
 	public void removeI(int i) {
-        // TODO: implement this method
+		// error handling
+        if (i < 0 | i > this.getSize()) {
+			throw new IndexOutOfBoundsException("List Index " + i +" is out of Bounds");
+		}
+		// find element for position i-1
+		ListElement curr = this.head;
+		for (int j = 0; j < i-1; j++){
+			curr = curr.getNext();
+		}
+
+		// delete element
+		curr.setNext(curr.getNext().getNext());
+
+		// decrease size of list
+		this.size--;
 	}
 
 
