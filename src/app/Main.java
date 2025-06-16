@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         //! Tests, nicht löschen, lieber auskommentieren wenn das stört
         //! Jo, wenn die Liste größer ist auch schön beim print das i < auf einen höeren int stellen.
+        //? was wenn nicht
         ExtendedLinkedList list = new ExtendedLinkedList();
         ExtendedLinkedList list2 = new ExtendedLinkedList();
 
