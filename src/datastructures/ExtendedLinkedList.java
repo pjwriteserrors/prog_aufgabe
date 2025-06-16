@@ -304,7 +304,44 @@ public class ExtendedLinkedList implements Iterable {
 	 * combineLists(list2): appends list2 to this list
 	 */
 	public void combineLists(ExtendedLinkedList list2) {
-        // TODO: implement this method
+        if (list2 == null || list2.head == null) {
+			return;
+		}
+
+		
+		// find end of current List
+		if (this.head == null) {
+			// in case current List empty
+			ListElement curr2 = list2.head;
+			this.head = new ListElement(curr2.getData());
+			ListElement currNew = this.head;
+			curr2 = curr2.getNext();
+			this.size++;
+
+			while (curr2 != null) {
+				currNew.setNext(new ListElement(curr2.getData()));
+				currNew = currNew.getNext();
+				curr2 = curr2.getNext();
+				this.size++;
+			}
+		}
+		else{
+			// if not empty, get attached to end
+
+
+			ListElement curr = this.head;
+			while (curr.getNext() != null) {
+				curr = curr.getNext();
+			}
+
+			ListElement curr2 = list2.head;
+			while (curr2 != null) {
+				curr.setNext(new ListElement(curr2.getData()));
+				curr = curr.getNext();
+				curr2 = curr2.getNext();
+				this.size++;
+			}
+		}
 	}
 
     /**
