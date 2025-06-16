@@ -283,7 +283,7 @@ public class ExtendedLinkedList implements Iterable {
 	 */
 	public void removeI(int i) {
 		// error handling
-        if (i < 0 | i > this.getSize()) {
+        if (i < 0 || i > this.getSize()) {
 			throw new IndexOutOfBoundsException("List Index " + i +" is out of Bounds");
 		}
 		// find element for position i-1
@@ -310,8 +310,9 @@ public class ExtendedLinkedList implements Iterable {
 
 		
 		// find end of current List
+
+		// in case current List empty
 		if (this.head == null) {
-			// in case current List empty
 			ListElement curr2 = list2.head;
 			this.head = new ListElement(curr2.getData());
 			ListElement currNew = this.head;
@@ -325,8 +326,9 @@ public class ExtendedLinkedList implements Iterable {
 				this.size++;
 			}
 		}
+
+		// if not empty, get attached to end
 		else{
-			// if not empty, get attached to end
 
 
 			ListElement curr = this.head;
@@ -350,8 +352,24 @@ public class ExtendedLinkedList implements Iterable {
      * @return whether the list is sorted or not
 	 */
 	public boolean isSorted() {
-        // TODO: implement this method
-        return false;
+		//error handling
+        if(this.head == null){
+			return false;
+		}
+		ListElement curr = this.head;
+		while (curr.getNext() != null) {
+			// need comparable to compare objects
+			Comparable currentValue = curr.getData();
+			Comparable nextValue = curr.getNext().getData();
+			if (currentValue.compareTo(nextValue) > 0) {
+				//not sorted
+				return false;
+			}
+			else{
+				curr = curr.getNext();
+			}
+		}
+        return true;
 	}
 
 	/**
@@ -360,7 +378,29 @@ public class ExtendedLinkedList implements Iterable {
      * @throws UnsupportedOperationException if the list is not sorted.
 	 */
 	public void addSorted(Integer data) throws UnsupportedOperationException {
-        // TODO: implement this method
+		//Exception in cas of not Sorted list
+		if (!this.isSorted()) {
+			throw new UnsupportedOperationException("The given list is not sorted ");
+		}
+        
+		ListElement newElement = new ListElement(data);
+
+		// special case if List is empty or element has to be first in List
+		if (this.head == null || data < (Integer) this.head.getData()) {
+			newElement.setNext(this.head);
+			this.head = newElement;
+			this.size++;
+			return;
+		}
+
+		// search correct position for data
+		ListElement currentElement = this.head;
+		while (currentElement.getNext() != null && data >= (Integer) currentElement.getNext().getData()) {
+			currentElement = currentElement.getNext();
+		}
+		newElement.setNext(currentElement);
+		currentElement.setNext(newElement);
+		this.size++;
 	}
 
 
