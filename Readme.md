@@ -54,4 +54,3 @@ Dies kann beispielsweise so aussehen:
 - [ ] f (philipp)
 - [ ] g
 - [ ] h
-test
