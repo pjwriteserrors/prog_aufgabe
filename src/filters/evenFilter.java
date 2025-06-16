@@ -6,7 +6,7 @@ public class evenFilter implements Callable<Boolean, Integer> {
 
     @Override
     public Boolean evaluate(Integer p) {
-        return p % 2 == 0
+        return p % 2 == 0;
     }
 
 }

@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import interfaces.Callable;
-import filters.evenFilter
+import filters.evenFilter;
 import filters.negativeFilter;
 import filters.oddFilter;
-import filters.positiveFilter 
+import filters.positiveFilter;
 
 public class ExtendedLinkedList implements Iterable {
 
@@ -418,7 +418,18 @@ public class ExtendedLinkedList implements Iterable {
 	 * @return outputs a new list containing only the filtered elements
 	 */
 	public ExtendedLinkedList filterElements(Callable<Boolean, Integer> func) {
-		return null;
+		ExtendedLinkedList filteredList = new ExtendedLinkedList();
+		ListElement curr = this.head;
+
+		while (curr != null) {
+			Integer value = (Integer) curr.getData();
+			// check with evaluate() if func is true
+			if (func.evaluate(value)) {
+				filteredList.addLast(value);
+			}
+			curr = curr.getNext();
+		}
+		return filteredList;
 	}
 
 	/**
