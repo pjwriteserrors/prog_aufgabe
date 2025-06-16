@@ -49,7 +49,7 @@ Dies kann beispielsweise so aussehen:
 - [x] a
 - [x] b
 - [x] c
-- [ ] d (leon)
+- [x] d (leon)
 - [x] e (philipp)
 - [ ] f (philipp)
 - [ ] g
