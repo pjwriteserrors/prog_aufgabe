@@ -4,6 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import interfaces.Callable;
+import filters.evenFilter
+import filters.negativeFilter;
+import filters.oddFilter;
+import filters.positiveFilter 
 
 public class ExtendedLinkedList implements Iterable {
 
