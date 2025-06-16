@@ -423,7 +423,7 @@ public class ExtendedLinkedList implements Iterable {
 	 * @return outputs all even elements in list
 	 */
 	public ExtendedLinkedList evenElements() {
-		return null;
+		return filterElements(new evenFilter());
 	}
 
 	/**
@@ -433,7 +433,7 @@ public class ExtendedLinkedList implements Iterable {
 	 * @return outputs all odd elements in list
 	 */
 	public ExtendedLinkedList oddElements() {
-		return null;
+		return filterElements(new oddFilter());
 	}
 
 	/**
@@ -443,8 +443,7 @@ public class ExtendedLinkedList implements Iterable {
 	 * @return outputs all positive elements in list
 	 */
 	public ExtendedLinkedList positiveElements() {
-		// TODO: implement this method
-		return null;
+		return filterElements(new positiveFilter());
 	}
 
 	/**
@@ -454,8 +453,8 @@ public class ExtendedLinkedList implements Iterable {
 	 * @return outputs all negative elements in list
 	 */
 	public ExtendedLinkedList negativeElements() {
-		// TODO: implement this method
-		return null;
+		return filterElements(new negativeFilter());
+		
 	}
 
 	/**

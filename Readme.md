@@ -50,7 +50,7 @@ Dies kann beispielsweise so aussehen:
 - [x] b
 - [x] c
 - [ ] d (leon)
-- [ ] e (philipp)
+- [x] e (philipp)
 - [ ] f
 - [ ] g
 - [ ] h
