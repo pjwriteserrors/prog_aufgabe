@@ -46,11 +46,11 @@ Dies kann beispielsweise so aussehen:
 4567126, test
 ```
 
-- [ ] a
-- [ ] b
-- [ ] c
-- [ ] d
-- [ ] e
+- [x] a
+- [x] b
+- [x] c
+- [ ] d (leon)
+- [ ] e (philipp)
 - [ ] f
 - [ ] g
 - [ ] h
