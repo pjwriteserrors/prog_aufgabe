@@ -51,6 +51,6 @@ Dies kann beispielsweise so aussehen:
 - [x] c
 - [ ] d (leon)
 - [x] e (philipp)
-- [ ] f
+- [ ] f (philipp)
 - [ ] g
 - [ ] h
