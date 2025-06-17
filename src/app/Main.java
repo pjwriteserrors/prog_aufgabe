@@ -30,5 +30,23 @@ public class Main {
         for (int i = 0; i < 6; i++) {
             System.out.println(list.get(i));
         }
+
+
+        ExtendedLinkedList list3 = new ExtendedLinkedList();
+        list3.addLast(1);
+        list3.addLast(2);
+        list3.addLast(3);
+        list3.addLast(2);
+        list3.addLast(4);
+        list3.addLast(1);
+
+        list3.removeDuplicates();
+
+        System.out.println("Remove duplicates \n");
+        for (int i = 0; i < 4; i++) {
+            System.out.println(list3.get(i));
+        }
+
+
     }
 }

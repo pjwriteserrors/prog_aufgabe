@@ -8,6 +8,7 @@ import filters.evenFilter;
 import filters.negativeFilter;
 import filters.oddFilter;
 import filters.positiveFilter;
+import filters.duplicateFilter;
 
 public class ExtendedLinkedList implements Iterable {
 
@@ -479,7 +480,7 @@ public class ExtendedLinkedList implements Iterable {
 	 *
 	 */
 	public void rotation(int i, String direction) throws UnsupportedOperationException {
-		// TODO: implement this method
+		
 	}
 
 	/**
@@ -488,7 +489,15 @@ public class ExtendedLinkedList implements Iterable {
 	 *
 	 */
 	public void removeDuplicates() {
-		// TODO: implement this method
+		// uses custom filter duplicateFilter
+		duplicateFilter filter = new duplicateFilter();
+
+		ExtendedLinkedList filteredList = this.filterElements(filter);
+
+		// replace old List with new filtered List
+
+		this.head = filteredList.head;
+		this.size = filteredList.size;
 	}
 
     public ExtendedLinkedList map(Callable<Integer, Integer> m) {
