@@ -9,6 +9,8 @@ import filters.negativeFilter;
 import filters.oddFilter;
 import filters.positiveFilter;
 import filters.duplicateFilter;
+import maps.addI;
+import maps.multiplyI;
 
 public class ExtendedLinkedList implements Iterable {
 
@@ -501,8 +503,21 @@ public class ExtendedLinkedList implements Iterable {
 	}
 
     public ExtendedLinkedList map(Callable<Integer, Integer> m) {
-        return null;
-        // TODO: implement this method
+        ExtendedLinkedList result = new ExtendedLinkedList();
+		ListElement curr = this.head;
+		// loop all list elements
+		while (curr != null) {
+
+			Integer value = (Integer) curr.getData();
+
+			//call func m with ist element as Integer
+			Integer mapValue = m.evaluate(value);
+			result.addLast(mapValue);
+			curr.getNext();
+		}
+		
+		return result;
+        
     }
 
 }

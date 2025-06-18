@@ -11,8 +11,7 @@ public class multiplyI implements Callable<Integer, Integer> {
 
     @Override
     public Integer evaluate(Integer p) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'evaluate'");
+        return i * p;
     }
 
 }
