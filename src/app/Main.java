@@ -20,40 +20,46 @@ public class Main {
         list2.addLast(5);
         list2.addLast(6);
 
-        //* AddI test
-        list.addI(1000, 1);
-        System.out.println("\u001B[32m" + "addI an Stelle 1:" + "\u001B[0m");
-        for (int i = 0; i < 4; i++) {
-            System.out.println(list.get(i));
-        }
-        System.out.println("\n");
+        System.out.println("\u001B[32m" + "OG liste:" + "\u001B[0m");
+        printList(list);
+        System.out.println("\u001B[32m" + "OG liste2:" + "\u001B[0m");
+        printList(list2);
 
+        //* AddI test
+        list.addI(1, 1);
+
+        System.out.println("\u001B[32m" + "addI an Stelle 1:" + "\u001B[0m");
+        printList(list);
+        
         //* RemoveI test
         list.removeI(2);
 
+        System.out.println("\u001B[32m" + "RemoveI an Stelle 2:" + "\u001B[0m");
+        printList(list);
+
+        //* CombineLists test
         list.combineLists(list2);
-        System.out.println("\u001B[32m"+ "removeI an Stelle 2 und combineLists"+ "\u001B[0m");
-        for (int i = 0; i < 6; i++) {
-            System.out.println(list.get(i));
-        }
-        System.out.println("\n");
 
+        System.out.println("\u001B[32m"+ "combineLists:"+ "\u001B[0m");
+        printList(list);
 
-        ExtendedLinkedList list3 = new ExtendedLinkedList();
-        list3.addLast(1);
-        list3.addLast(2);
-        list3.addLast(3);
-        list3.addLast(2);
-        list3.addLast(4);
-        list3.addLast(1);
-
-        list3.removeDuplicates();
+        //* RemoveDuplicates test
+        list.removeDuplicates();
 
         System.out.println("\u001B[32m"+"Remove duplicates:"+ "\u001B[0m");
-        for (int i = 0; i < 4; i++) {
-            System.out.println(list3.get(i));
-        }
-        System.out.println("\n");
+        printList(list);
 
+        //* rotation test
+        list.rotation(2,"right");
+
+        System.out.println("\u001B[32m"+"rotate list:"+ "\u001B[0m");
+        printList(list);
+    }
+
+    private static void printList(ExtendedLinkedList list) {
+        for (Object o : list) {
+            System.out.print(o + " ");
+        }
+        System.out.println();
     }
 }

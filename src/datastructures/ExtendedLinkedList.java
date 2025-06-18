@@ -1,5 +1,6 @@
 package datastructures;
 
+import java.net.http.WebSocket.Listener;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -482,7 +483,35 @@ public class ExtendedLinkedList implements Iterable {
 	 *
 	 */
 	public void rotation(int i, String direction) throws UnsupportedOperationException {
+		int len = this.size;
+		if (len == 0) return;
+		int steps = i % len;
+		if (steps == 0) return;
+
+		if (direction == "right") {
+			 int leftsteps = (len - steps) % len;
+		} else if (direction == "left") {
+			int leftsteps = steps;
+		} else {
+			throw new UnsupportedOperationException("Direction has to be 'right' or 'left'.");
+		}
+
+		// rotate
+		ListElement pivot = this.head;
+		for (int j = 0; j < steps; j++) {
+			pivot = pivot.getNext();
+		}
+
+		ListElement newHead = pivot.getNext();
+		pivot.setNext(null);
+		ListElement tail = newHead;
+		while (tail.getNext() != null) {
+			tail = tail.getNext();
+		}
+		tail.setNext(head);
+		this.head = newHead;
 		
+
 	}
 
 	/**
