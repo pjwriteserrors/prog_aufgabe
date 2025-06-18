@@ -52,6 +52,18 @@ public class Main {
         System.out.println("\u001B[32m"+"Remove duplicates:"+ "\u001B[0m");
         printList(list);
 
+        //* map test
+    
+        multiplyI mult = new multiplyI(2);
+        ExtendedLinkedList mappedList = list.map(mult);
+    
+    
+        System.out.println("\u001B[32m"+"map mit multiplyI(2)"+ "\u001B[0m");
+        for (int i = 0; i < 4; i++) {
+            System.out.println(mappedList.get(i));
+        }
+
+
         //* rotation test
         list.rotation(2,"right");
 
@@ -67,16 +79,6 @@ public class Main {
 
         
         
-        //* map test
-
-        multiplyI mult = new multiplyI(2);
-        ExtendedLinkedList mappedList = list3.map(mult);
-
-
-        System.out.println("\u001B[32m"+"map mit multiplyI(2)"+ "\u001B[0m");
-        for (int i = 0; i < 4; i++) {
-            System.out.println(mappedList.get(i));
-        }
 
     }
 }
