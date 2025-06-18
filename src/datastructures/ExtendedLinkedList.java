@@ -542,7 +542,7 @@ public class ExtendedLinkedList implements Iterable {
 			//call func m with ist element as Integer
 			Integer mapValue = m.evaluate(value);
 			result.addLast(mapValue);
-			curr.getNext();
+			curr = curr.getNext();
 		}
 		
 		return result;

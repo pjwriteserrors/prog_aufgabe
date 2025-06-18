@@ -1,12 +1,15 @@
 package app;
 
 import datastructures.ExtendedLinkedList;
+import maps.addI;
+import maps.multiplyI;
 
 public class Main {
     public static void main(String[] args) {
         //! Tests, nicht löschen, lieber auskommentieren wenn das stört
         //! Jo, wenn die Liste größer ist auch schön beim print das i < auf einen höeren int stellen.
         //? was wenn nicht
+        //! dann schnappe ich mir dich 
 
         // make defaults
         ExtendedLinkedList list = new ExtendedLinkedList();
@@ -60,6 +63,20 @@ public class Main {
         for (Object o : list) {
             System.out.print(o + " ");
         }
-        System.out.println();
+        System.out.println("\n");
+
+        
+        
+        //* map test
+
+        multiplyI mult = new multiplyI(2);
+        ExtendedLinkedList mappedList = list3.map(mult);
+
+
+        System.out.println("\u001B[32m"+"map mit multiplyI(2)"+ "\u001B[0m");
+        for (int i = 0; i < 4; i++) {
+            System.out.println(mappedList.get(i));
+        }
+
     }
 }
