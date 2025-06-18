@@ -53,21 +53,27 @@ public class Main {
         printList(list);
 
         //* map test
-    
         multiplyI mult = new multiplyI(2);
         ExtendedLinkedList mappedList = list.map(mult);
-    
-    
+        
         System.out.println("\u001B[32m"+"map mit multiplyI(2)"+ "\u001B[0m");
-        for (int i = 0; i < 4; i++) {
-            System.out.println(mappedList.get(i));
-        }
+        printList(mappedList);
 
 
         //* rotation test
         list.rotation(2,"right");
 
-        System.out.println("\u001B[32m"+"rotate list:"+ "\u001B[0m");
+        System.out.println("\u001B[32m"+"rotate list right:"+ "\u001B[0m");
+        printList(list);
+        
+        list = new ExtendedLinkedList();
+        for (int i = 1; i <= 5; i++) list.addLast(i);
+
+        System.out.println("\u001B[32m"+"reset list1:"+ "\u001B[0m");
+        printList(list);
+
+        list.rotation(2,"left");
+        System.out.println("\u001B[32m"+"rotate list2 left:"+ "\u001B[0m");
         printList(list);
     }
 

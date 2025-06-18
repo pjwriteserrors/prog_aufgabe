@@ -487,18 +487,19 @@ public class ExtendedLinkedList implements Iterable {
 		if (len == 0) return;
 		int steps = i % len;
 		if (steps == 0) return;
+		int leftsteps;
 
 		if (direction == "right") {
-			 int leftsteps = (len - steps) % len;
+			 leftsteps = (len - steps) % len;
 		} else if (direction == "left") {
-			int leftsteps = steps;
+			leftsteps = steps;
 		} else {
 			throw new UnsupportedOperationException("Direction has to be 'right' or 'left'.");
 		}
 
 		// rotate
 		ListElement pivot = this.head;
-		for (int j = 0; j < steps; j++) {
+		for (int j = 1; j < leftsteps; j++) {
 			pivot = pivot.getNext();
 		}
 
