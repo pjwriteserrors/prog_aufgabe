@@ -49,8 +49,8 @@ Dies kann beispielsweise so aussehen:
 - [x] a
 - [x] b
 - [x] c
-- [x] d (leon)
+- [x] d
 - [x] e (philipp)
 - [ ] f (philipp)
-- [ ] g
-- [ ] h
+- [x] g
+- [x] h
